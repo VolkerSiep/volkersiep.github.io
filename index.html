@@ -1,0 +1,44 @@
+---
+layout: home
+background: '/assets/pics/beach_pattern_20240614_150248.jpg'
+---
+<p>
+    On this page, I collect all the fun stuff I fabricate while normal people watch TV. The <i>major</i> projects are
+    hosted on my <a href="https://github.com/VolkerSiep">GitHub</a> account, while smaller things, like my nerdy
+    articles, might just be uploaded here.
+</p>
+<p>
+    Below listed are my featured projects. Go <a href="/posts">here</a> to see all posts.
+</p>
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5">
+
+        {% assign featured_posts = site.posts | where: "featured", "true" %}
+        {% for post in featured_posts %}
+        <div class="col-md-4 mb-5">
+            <div class="card h-100 shadow-sm border-1">
+                {% if post.image %}
+                <img class="card-img-top" src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                {% endif %}
+
+                <div class="card-body">
+                    <h2 class="card-title h5 font-weight-bold">
+                        <a href="{{ post.url | relative_url }}" class="text-dark text-decoration-none">
+                            {{ post.title }}
+                        </a>
+                    </h2>
+                    {% if post.subtitle %}
+                    <p class="card-text text-muted small">{{ post.subtitle }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="card-footer bg-transparent border-0 pb-4">
+                    <a class="btn btn-primary btn-sm" href="{{ post.url | relative_url }}">Read More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
