@@ -26,16 +26,17 @@ description: >- # this means to ignore newlines until "baseurl:"
   
   As such, so I thought, I could collect all that stuff on one page - in the shape of blogs.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://volkersiep.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  VolkerSiep
 author: Dr. V
 
 # Build settings
-theme: jekyll-theme-clean-blog
+remote_theme: StartBootstrap/startbootstrap-clean-blog-jekyll
 markdown:           kramdown
 paginate:           5
 paginate_path:      "/posts/page:num/"
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-paginate
 #   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
